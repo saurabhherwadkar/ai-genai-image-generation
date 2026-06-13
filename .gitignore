@@ -37,6 +37,15 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 data/
+src/ai_genai_image_generation/autoencoder/data/
+
+# Model checkpoints and outputs
+*.pt
+*.pth
+*.ckpt
+outputs/
+checkpoints/
+logs/
 
 # Unit test / coverage reports
 htmlcov/
@@ -174,3 +183,18 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# IDE settings
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Configuration overrides (environment-specific)
+config/settings.local.yaml
+config/settings.production.yaml
+config/settings.staging.yaml

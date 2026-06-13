@@ -1,0 +1,97 @@
+# =============================================================================
+# Application Settings Configuration
+# =============================================================================
+# This file contains all configurable parameters for the image generation
+# project. Values here can be overridden per environment by creating
+# settings.{ENV}.yaml files (e.g., settings.production.yaml).
+
+# -----------------------------------------------------------------------------
+# Logging Configuration
+# -----------------------------------------------------------------------------
+logging:
+  # Log level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  level: "INFO"
+  # Log format string
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  # Log output file (set to null for console-only)
+  file: null
+
+# -----------------------------------------------------------------------------
+# Data Configuration
+# -----------------------------------------------------------------------------
+data:
+  # Root directory for dataset storage
+  root_dir: "./data"
+  # Number of data loader worker processes
+  num_workers: 4
+  # Whether to download datasets if not present
+  download: true
+
+# -----------------------------------------------------------------------------
+# Training Configuration - Autoencoder
+# -----------------------------------------------------------------------------
+autoencoder:
+  batch_size: 32
+  learning_rate: 0.0001
+  num_epochs: 30
+  # Optimizer: "adam", "sgd", "adamw"
+  optimizer: "adam"
+
+# -----------------------------------------------------------------------------
+# Training Configuration - Variational Autoencoder
+# -----------------------------------------------------------------------------
+vae:
+  batch_size: 32
+  learning_rate: 0.001
+  num_epochs: 15
+  latent_dim: 50
+  optimizer: "adam"
+
+# -----------------------------------------------------------------------------
+# Training Configuration - Conditional VAE
+# -----------------------------------------------------------------------------
+cvae:
+  batch_size: 128
+  learning_rate: 0.001
+  num_epochs: 20
+  latent_dim: 20
+  num_classes: 10
+  label_embedding_dim: 50
+  optimizer: "adam"
+
+# -----------------------------------------------------------------------------
+# Training Configuration - WGAN
+# -----------------------------------------------------------------------------
+wgan:
+  batch_size: 64
+  learning_rate: 0.0001
+  num_epochs: 250
+  noise_dim: 100
+  clip_value: 1.0
+  n_critic: 2
+  # Adam betas
+  beta1: 0.6
+  beta2: 0.999
+  optimizer: "adam"
+
+# -----------------------------------------------------------------------------
+# Training Configuration - Diffusion (DDPM)
+# -----------------------------------------------------------------------------
+diffusion:
+  batch_size: 32
+  learning_rate: 0.001
+  num_epochs: 100
+  num_timesteps: 1000
+  beta_start: 0.0001
+  beta_end: 0.02
+  time_embedding_dim: 256
+  image_size: 32
+  optimizer: "adam"
+
+# -----------------------------------------------------------------------------
+# Device Configuration
+# -----------------------------------------------------------------------------
+device:
+  # Options: "auto", "cuda", "cpu"
+  # "auto" will use CUDA if available, otherwise CPU
+  preferred: "auto"

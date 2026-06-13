@@ -1,22 +1,28 @@
 [project]
 name = "ai-genai-image-generation"
 version = "0.1.0"
-description = ""
+description = "Generative AI image generation models: Autoencoder, VAE, cVAE, WGAN, and DDPM trained on MNIST"
 authors = [
-    {name = "Your Name",email = "you@example.com"}
+    {name = "Your Name", email = "you@example.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.12"
 
 [tool.poetry.dependencies]
-torch = "*"
-torchvision="*"
-matplotlib="*"
-tqdm="*"
+python = ">=3.12"
+torch = ">=2.3.0"
+torchvision = ">=0.18.0"
+matplotlib = ">=3.9.0"
+tqdm = ">=4.66.0"
+pyyaml = ">=6.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.2.0"
+pytest-cov = ">=5.0.0"
+ruff = ">=0.4.0"
 
 [tool.poetry]
 packages = [{include = "ai_genai_image_generation", from = "src"}]
-
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -24,3 +30,19 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 run-auto-encoder = "ai_genai_image_generation.main:run_auto_encoder"
+run-vae = "ai_genai_image_generation.main:run_vae"
+run-cvae = "ai_genai_image_generation.main:run_cvae"
+run-wgan = "ai_genai_image_generation.main:run_wgan"
+run-diffusion = "ai_genai_image_generation.main:run_diffusion"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=ai_genai_image_generation --cov-report=term-missing"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "S", "B", "A", "C4", "PT"]
+ignore = ["S101"]
