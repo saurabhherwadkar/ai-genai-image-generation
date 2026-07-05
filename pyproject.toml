@@ -6,26 +6,26 @@ authors = [
     {name = "Your Name", email = "you@example.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.14"
 
 [tool.poetry.dependencies]
-python = ">=3.12"
-torch = ">=2.3.0"
-torchvision = ">=0.18.0"
-matplotlib = ">=3.9.0"
-tqdm = ">=4.66.0"
-pyyaml = ">=6.0"
+python = ">=3.12,<3.14"
+torch = ">=2.7.0"
+torchvision = ">=0.22.0"
+matplotlib = ">=3.10.0"
+tqdm = ">=4.67.0"
+pyyaml = ">=6.0.2"
 
 [tool.poetry.group.dev.dependencies]
-pytest = ">=8.2.0"
-pytest-cov = ">=5.0.0"
-ruff = ">=0.4.0"
+pytest = ">=8.3.0"
+pytest-cov = ">=6.1.0"
+ruff = ">=0.11.0"
 
 [tool.poetry]
 packages = [{include = "ai_genai_image_generation", from = "src"}]
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
+requires = ["poetry-core>=2.1.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]

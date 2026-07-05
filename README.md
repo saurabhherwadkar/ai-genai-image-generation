@@ -2,6 +2,19 @@
 
 A collection of generative deep learning models for image synthesis, implemented in PyTorch and trained on the MNIST handwritten digit dataset. This project demonstrates progressively sophisticated generative architectures from basic autoencoders to diffusion models.
 
+## Key Learning Objectives
+
+- Understand the theory and implementation of convolutional autoencoders for image compression and reconstruction
+- Learn how Variational Autoencoders (VAEs) model probabilistic latent spaces using the reparameterization trick and KL divergence
+- Implement class-conditional generation with Conditional VAEs to control output attributes
+- Build Wasserstein GANs with weight clipping for stable adversarial training and understand mode collapse mitigation
+- Implement Denoising Diffusion Probabilistic Models (DDPM) including forward noising schedules and reverse denoising with a UNet backbone
+- Design modular deep learning projects with configuration-driven hyperparameters and device-agnostic training loops
+- Integrate PyTorch datasets, transforms, and DataLoaders for efficient image preprocessing pipelines
+- Apply software engineering best practices including unit testing generative models, CI-friendly project structure, and reproducible environments with Poetry
+- Compare generative model families (autoencoders, GANs, diffusion) in terms of training stability, output quality, and latent space properties
+- Develop prompt-to-architecture intuition by progressing from simple reconstruction objectives to complex score-based generative modeling
+
 ## Models Implemented
 
 | Model | Description | Module |
