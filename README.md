@@ -2,7 +2,7 @@
 
 A collection of generative deep learning models for image synthesis, implemented in PyTorch and trained on the MNIST handwritten digit dataset. This project demonstrates progressively sophisticated generative architectures from basic autoencoders to diffusion models.
 
-## Key Learning Objectives
+## Objectives
 
 - Understand the theory and implementation of convolutional autoencoders for image compression and reconstruction
 - Learn how Variational Autoencoders (VAEs) model probabilistic latent spaces using the reparameterization trick and KL divergence
